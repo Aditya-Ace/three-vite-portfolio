@@ -1,4 +1,9 @@
 import "./style.css"
+import spaceURL from "./space.jpg"
+import adityaURL from "./aditya.jpg"
+import moonURL from "./moon.jpg"
+import earthURL from "./earth.jpg"
+import normalURL from "./normal.jpg"
 import * as THREE from "three"
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
@@ -52,11 +57,11 @@ function addStar() {
 
 Array(200).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load("space.jpg")
+const spaceTexture = new THREE.TextureLoader().load(spaceURL)
 scene.background = spaceTexture
 
 //Avatar
-const adityaTexture = new THREE.TextureLoader().load("aditya.jpg")
+const adityaTexture = new THREE.TextureLoader().load(adityaURL)
 
 const aditya = new THREE.Mesh(
   new THREE.BoxGeometry(7, 7, 7),
@@ -65,8 +70,8 @@ const aditya = new THREE.Mesh(
 scene.add(aditya)
 
 //Moon
-const moonTexture = new THREE.TextureLoader().load("moon.jpg")
-const normalTexture = new THREE.TextureLoader().load("normal.jpg")
+const moonTexture = new THREE.TextureLoader().load(moonURL)
+const normalTexture = new THREE.TextureLoader().load(normalURL)
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -77,7 +82,7 @@ moon.position.z = 20
 moon.position.setX(-10)
 
 //Moon
-const earthTexture = new THREE.TextureLoader().load("earth.jpg")
+const earthTexture = new THREE.TextureLoader().load(earthURL)
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(20, 22, 52),
   new THREE.MeshStandardMaterial({
